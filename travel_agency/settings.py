@@ -67,12 +67,11 @@ CSRF_TRUSTED_ORIGINS = [
 
 DATABASES = {
     'default': dj_database_url.config(
-        default=os.environ.get("DATABASE_URL"),
+        default='sqlite:///db.sqlite3',
         conn_max_age=600,
-        ssl_require=True
+        ssl_require=bool(os.environ.get("DATABASE_URL"))
     )
 }
-
 
 
 STATIC_URL = '/static/'
