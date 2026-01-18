@@ -114,10 +114,15 @@ class Promotion(models.Model):
 # =========================
 # Tour
 # =========================
+from django.db import models
+from cloudinary.models import CloudinaryField
+
 class Tour(models.Model):
     destination = models.ForeignKey(Destination, on_delete=models.CASCADE, related_name='tours')
     title = models.CharField(max_length=200)
-    image = models.ImageField(upload_to='img/tours/', blank=True, null=True)
+
+    image = CloudinaryField('image', blank=True, null=True)
+
     price_per_night = models.DecimalField(max_digits=8, decimal_places=2)
     description = models.TextField(blank=True)
 

@@ -142,7 +142,6 @@ STATICFILES_STORAGE = (
 # ==============================
 # MEDIA / CLOUDINARY
 # ==============================
-MEDIA_URL = "/media/"
 
 DEFAULT_FILE_STORAGE = (
     "cloudinary_storage.storage.MediaCloudinaryStorage"
